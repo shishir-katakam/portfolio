@@ -2,140 +2,120 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shishir's Projects</title>
-  <style>
-    /* Apple Liquid Glass Minimalist Style */
-    body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      background: #111;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-      color: #fff;
-    }
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>endiidishishir</title>
+        <style>
+            /* Reset */
+                * {
+                      margin: 0;
+                            padding: 0;
+                                  box-sizing: border-box;
+                                      }
 
-    h1 {
-      font-weight: 600;
-      font-size: 2.5rem;
-      margin-bottom: 50px;
-      letter-spacing: 1px;
-      z-index: 2;
-      position: relative;
-    }
+                                          body {
+                                                height: 100vh;
+                                                      display: flex;
+                                                            flex-direction: column;
+                                                                  justify-content: center;
+                                                                        align-items: center;
+                                                                              background: linear-gradient(135deg, #000000, #1a1a1a);
+                                                                                    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+                                                                                          overflow: hidden;
+                                                                                                color: #fff;
+                                                                                                    }
 
-    /* Project List */
-    .project-list {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-      width: 320px;
-      z-index: 2;
-      position: relative;
-    }
+                                                                                                        /* Liquid glass card */
+                                                                                                            .glass {
+                                                                                                                  background: rgba(255, 255, 255, 0.05);
+                                                                                                                        border-radius: 20px;
+                                                                                                                              backdrop-filter: blur(15px);
+                                                                                                                                    -webkit-backdrop-filter: blur(15px);
+                                                                                                                                          border: 1px solid rgba(255, 255, 255, 0.1);
+                                                                                                                                                padding: 2rem 3rem;
+                                                                                                                                                      text-align: center;
+                                                                                                                                                            box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+                                                                                                                                                                  position: relative;
+                                                                                                                                                                        z-index: 10;
+                                                                                                                                                                            }
 
-    .project {
-      display: flex;
-      align-items: center;
-      gap: 15px;
-      padding: 15px 25px;
-      border-radius: 20px;
-      background: rgba(255, 255, 255, 0.05);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      text-decoration: none;
-      color: #fff;
-      font-size: 1.25rem;
-      transition: 0.3s ease;
-    }
+                                                                                                                                                                                .title {
+                                                                                                                                                                                      font-size: 2rem;
+                                                                                                                                                                                            margin-bottom: 2rem;
+                                                                                                                                                                                                  font-weight: 600;
+                                                                                                                                                                                                      }
 
-    .project img {
-      width: 40px;
-      height: 40px;
-      object-fit: contain;
-      border-radius: 8px;
-    }
+                                                                                                                                                                                                          .links {
+                                                                                                                                                                                                                display: flex;
+                                                                                                                                                                                                                      flex-direction: column;
+                                                                                                                                                                                                                            gap: 1.5rem;
+                                                                                                                                                                                                                                }
 
-    .project:hover {
-      background: rgba(255, 255, 255, 0.15);
-      transform: scale(1.05);
-    }
+                                                                                                                                                                                                                                    .link {
+                                                                                                                                                                                                                                          display: flex;
+                                                                                                                                                                                                                                                align-items: center;
+                                                                                                                                                                                                                                                      gap: 1rem;
+                                                                                                                                                                                                                                                            font-size: 1.2rem;
+                                                                                                                                                                                                                                                                  text-decoration: none;
+                                                                                                                                                                                                                                                                        color: white;
+                                                                                                                                                                                                                                                                              transition: transform 0.2s ease;
+                                                                                                                                                                                                                                                                                  }
 
-    /* Animated Background (subtle monochrome particles) */
-    .background {
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      overflow: hidden;
-      z-index: 1;
-    }
+                                                                                                                                                                                                                                                                                      .link:hover {
+                                                                                                                                                                                                                                                                                            transform: scale(1.05);
+                                                                                                                                                                                                                                                                                                  color: #aaa;
+                                                                                                                                                                                                                                                                                                      }
 
-    .particle {
-      position: absolute;
-      background: rgba(255,255,255,0.1);
-      border-radius: 50%;
-      animation: float 20s linear infinite;
-    }
+                                                                                                                                                                                                                                                                                                          .link img {
+                                                                                                                                                                                                                                                                                                                width: 28px;
+                                                                                                                                                                                                                                                                                                                      height: 28px;
+                                                                                                                                                                                                                                                                                                                            border-radius: 6px;
+                                                                                                                                                                                                                                                                                                                                }
 
-    @keyframes float {
-      0% { transform: translateY(100vh) translateX(0); opacity: 0.1; }
-      50% { opacity: 0.3; }
-      100% { transform: translateY(-10vh) translateX(50px); opacity: 0.1; }
-    }
+                                                                                                                                                                                                                                                                                                                                    /* Background animation */
+                                                                                                                                                                                                                                                                                                                                        .animation {
+                                                                                                                                                                                                                                                                                                                                              position: absolute;
+                                                                                                                                                                                                                                                                                                                                                    width: 400px;
+                                                                                                                                                                                                                                                                                                                                                          height: 400px;
+                                                                                                                                                                                                                                                                                                                                                                border-radius: 50%;
+                                                                                                                                                                                                                                                                                                                                                                      background: radial-gradient(circle, rgba(255,255,255,0.15), transparent);
+                                                                                                                                                                                                                                                                                                                                                                            animation: float 10s infinite alternate;
+                                                                                                                                                                                                                                                                                                                                                                                  z-index: 1;
+                                                                                                                                                                                                                                                                                                                                                                                      }
 
-    /* Responsive */
-    @media (max-width: 400px) {
-      .project-list {
-        width: 90%;
-      }
-      h1 {
-        font-size: 2rem;
-        margin-bottom: 30px;
-      }
-      .project img {
-        width: 30px;
-        height: 30px;
-      }
-    }
-  </style>
-</head>
-<body>
-  <h1>Shishir's Projects</h1>
+                                                                                                                                                                                                                                                                                                                                                                                          .animation:nth-child(1) {
+                                                                                                                                                                                                                                                                                                                                                                                                top: -100px;
+                                                                                                                                                                                                                                                                                                                                                                                                      left: -100px;
+                                                                                                                                                                                                                                                                                                                                                                                                            animation-delay: 0s;
+                                                                                                                                                                                                                                                                                                                                                                                                                }
 
-  <div class="project-list">
-    <a href="https://code.endiidishishir.qzz.io" class="project" target="_blank">
-      <img src="./assets/codevacnce-logo.png" alt="Codevacnce Logo">
-      Codevacnce
-    </a>
-    <a href="https://music.endiidishishir.qzz.io" class="project" target="_blank">
-      <img src="./assets/niora-logo.png" alt="Niora Logo">
-      Niora
-    </a>
-    <!-- Add future projects here -->
-  </div>
+                                                                                                                                                                                                                                                                                                                                                                                                                    .animation:nth-child(2) {
+                                                                                                                                                                                                                                                                                                                                                                                                                          bottom: -120px;
+                                                                                                                                                                                                                                                                                                                                                                                                                                right: -80px;
+                                                                                                                                                                                                                                                                                                                                                                                                                                      animation-delay: 3s;
+                                                                                                                                                                                                                                                                                                                                                                                                                                          }
 
-  <!-- Animated Background -->
-  <div class="background" id="background"></div>
+                                                                                                                                                                                                                                                                                                                                                                                                                                              @keyframes float {
+                                                                                                                                                                                                                                                                                                                                                                                                                                                    0% { transform: translate(0,0) scale(1); }
+                                                                                                                                                                                                                                                                                                                                                                                                                                                          100% { transform: translate(50px, 50px) scale(1.2); }
+                                                                                                                                                                                                                                                                                                                                                                                                                                                              }
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                </style>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                </head>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                <body>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                  <!-- Background blobs -->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <div class="animation"></div>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                      <div class="animation"></div>
 
-  <script>
-    // Create particles dynamically
-    const background = document.getElementById('background');
-    const particleCount = 30;
-
-    for (let i = 0; i < particleCount; i++) {
-      const p = document.createElement('div');
-      p.className = 'particle';
-      const size = Math.random() * 6 + 4; // 4px to 10px
-      p.style.width = size + 'px';
-      p.style.height = size + 'px';
-      p.style.left = Math.random() * 100 + 'vw';
-      p.style.animationDuration = 10 + Math.random() * 20 + 's';
-      background.appendChild(p);
-    }
-  </script>
-</body>
-</html>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <!-- Main glass card -->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                          <div class="glass">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                              <h1 class="title">endiidishishir</h1>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  <div class="links">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <a class="link" href="https://github.com/shishir-katakam" target="_blank">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <img src="./assets/github.png" alt="GitHub Logo"> GitHub
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      </a>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <a class="link" href="https://www.linkedin.com/in/shishir-katakam" target="_blank">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <img src="./assets/linkedin.png" alt="LinkedIn Logo"> LinkedIn
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          </a>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              </div>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                </div>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                </body>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                </html>
