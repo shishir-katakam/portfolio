@@ -364,7 +364,7 @@ const Index = () => {
 
             {/* Main Name - Massive */}
             <FadeContent blur={false} duration={800} easing="ease-out" initialOpacity={0} delay={200}>
-              <div style={{ position: 'relative', height: '180px', marginBottom: '3rem' }}>
+              <div className="relative mb-8 md:mb-12" style={{ height: 'clamp(200px, 30vh, 280px)' }}>
                 <TextPressure
                   text="Shishir Katakam"
                   flex={true}
