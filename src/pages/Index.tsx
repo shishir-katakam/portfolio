@@ -314,8 +314,8 @@ const Index = () => {
         ))}
       </div>
 
-      {/* ElasticSlider in bottom right corner - Responsive with overflow protection */}
-      <div className="fixed bottom-4 right-4 md:bottom-8 md:right-8 z-50 w-48 md:w-64 pr-12 md:pr-16 overflow-visible">
+      {/* ElasticSlider in bottom right corner - Hidden on mobile, visible on desktop */}
+      <div className="hidden md:block fixed bottom-8 right-8 z-50 w-64 pr-16 overflow-visible">
         <ElasticSlider
           leftIcon={getVolumeIcon()}
           rightIcon={null}
@@ -428,19 +428,19 @@ const Index = () => {
         </section>
 
         {/* FEATURED PROJECTS - Compact & Clean */}
-        <section className="px-8 md:px-16 lg:px-24 py-32 relative">
+        <section className="px-8 md:px-16 lg:px-24 py-12 md:py-20 lg:py-32 relative">
           
           <div className="max-w-7xl mx-auto">
             <FadeContent blur={false} duration={500} easing="ease-out" initialOpacity={0}>
-              <div className="text-left mb-16">
+              <div className="text-left mb-8 md:mb-12 lg:mb-16">
                 <span className="inline-block px-4 py-2 bg-white/10 border border-white/20 rounded-full text-white/90 text-sm font-semibold mb-4">
                   FEATURED WORK
                 </span>
-                <h2 className="text-5xl md:text-7xl font-black text-white mb-6 flex items-center">
-                  <Rocket className="mr-6 text-white/90" size={64} />
+                <h2 className="text-4xl md:text-5xl lg:text-7xl font-black text-white mb-4 md:mb-6 flex items-center">
+                  <Rocket className="mr-4 md:mr-6 text-white/90" size={48} />
                   Flagship Projects
                 </h2>
-                <p className="text-2xl text-white/70 max-w-3xl">
+                <p className="text-lg md:text-xl lg:text-2xl text-white/70 max-w-3xl">
                   Production-ready applications serving real users and solving real problems.
                 </p>
               </div>
@@ -494,18 +494,18 @@ const Index = () => {
         </section>
 
         {/* INNOVATIVE PROJECTS - Asymmetric Grid */}
-        <section className="px-8 md:px-16 lg:px-24 py-32 relative">
+        <section className="px-8 md:px-16 lg:px-24 py-12 md:py-20 lg:py-32 relative">
           <div className="max-w-7xl mx-auto">
             <FadeContent blur={false} duration={500} easing="ease-out" initialOpacity={0}>
-              <div className="text-right mb-16">
+              <div className="text-right mb-8 md:mb-12 lg:mb-16">
                 <span className="inline-block px-4 py-2 bg-white/10 border border-white/20 rounded-full text-white/90 text-sm font-semibold mb-4">
                   INNOVATION LAB
                 </span>
-                <h2 className="text-5xl md:text-7xl font-black text-white mb-6 flex items-center justify-end">
+                <h2 className="text-4xl md:text-5xl lg:text-7xl font-black text-white mb-4 md:mb-6 flex items-center justify-end">
                   Experimental Projects
-                  <Terminal className="ml-6 text-white/90" size={64} />
+                  <Terminal className="ml-4 md:ml-6 text-white/90" size={48} />
                 </h2>
-                <p className="text-2xl text-white/70 max-w-3xl ml-auto">
+                <p className="text-lg md:text-xl lg:text-2xl text-white/70 max-w-3xl ml-auto">
                   Pushing boundaries with cutting-edge tech and creative solutions.
                 </p>
               </div>
@@ -546,15 +546,15 @@ const Index = () => {
         </section>
 
         {/* EXPERIENCE - Timeline */}
-        <section className="px-8 md:px-16 lg:px-24 py-32 relative">
+        <section className="px-8 md:px-16 lg:px-24 py-12 md:py-20 lg:py-32 relative">
           <div className="max-w-7xl mx-auto">
             <FadeContent blur={false} duration={500} easing="ease-out" initialOpacity={0}>
-              <div className="text-center mb-20">
+              <div className="text-center mb-10 md:mb-16 lg:mb-20">
                 <span className="inline-block px-4 py-2 bg-white/10 border border-white/20 rounded-full text-white/90 text-sm font-semibold mb-4">
                   PROFESSIONAL JOURNEY
                 </span>
-                <h2 className="text-5xl md:text-7xl font-black text-white mb-6">
-                  <Briefcase className="inline-block mr-6 text-white/90" size={64} />
+                <h2 className="text-4xl md:text-5xl lg:text-7xl font-black text-white mb-4 md:mb-6">
+                  <Briefcase className="inline-block mr-4 md:mr-6 text-white/90" size={48} />
                   Experience
                 </h2>
               </div>
@@ -610,7 +610,7 @@ const Index = () => {
         </section>
 
         {/* SKILLS - Interactive Grid */}
-        <section className="px-8 md:px-16 lg:px-24 py-32 relative">
+        <section className="px-8 md:px-16 lg:px-24 py-12 md:py-20 lg:py-32 relative">
           <div className="max-w-7xl mx-auto">
             <FadeContent blur={false} duration={500} easing="ease-out" initialOpacity={0}>
               <div className="text-left mb-12">
@@ -652,7 +652,7 @@ const Index = () => {
         </section>
 
         {/* EDUCATION & CERTIFICATIONS - Split Layout */}
-        <section className="px-8 md:px-16 lg:px-24 py-32 relative">
+        <section className="px-8 md:px-16 lg:px-24 py-12 md:py-20 lg:py-32 relative">
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
               
