@@ -16,6 +16,11 @@ const TargetCursor = ({ targetSelector = '.cursor-target', spinDuration = 2, hid
     []
   );
 
+  // Don't render on touch devices (mobile/tablet)
+  const isTouchDevice = useMemo(() => {
+    return 'ontouchstart' in window || navigator.maxTouchPoints > 0 || window.innerWidth <= 1024;
+  }, []);
+
   const moveCursor = useCallback((x, y) => {
     if (!cursorRef.current) return;
     gsap.to(cursorRef.current, {
@@ -336,6 +341,11 @@ const TargetCursor = ({ targetSelector = '.cursor-target', spinDuration = 2, hid
         });
     }
   }, [spinDuration]);
+
+  // Don't render on mobile/tablet
+  if (isTouchDevice) {
+    return null;
+  }
 
   return (
     <div ref={cursorRef} className="target-cursor-wrapper">

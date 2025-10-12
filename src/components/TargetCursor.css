@@ -15,6 +15,20 @@
   will-change: transform;
 }
 
+/* Hide cursor on touch devices (mobile/tablet) */
+@media (pointer: coarse) {
+  .target-cursor-wrapper {
+    display: none !important;
+  }
+}
+
+/* Hide cursor on small screens (mobile/tablet backup) */
+@media (max-width: 1024px) {
+  .target-cursor-wrapper {
+    display: none !important;
+  }
+}
+
 .target-cursor-dot {
   position: absolute;
   left: 50%;
