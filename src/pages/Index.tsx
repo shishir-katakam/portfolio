@@ -482,11 +482,10 @@ const Index = () => {
                                     </span>
                                   ))}
                                 </div>
-                                <div className="inline-block w-full">
-                                  <div className="px-3 py-1.5 bg-white/30 backdrop-blur-xl border-2 border-white/50 rounded-lg h-[32px] flex items-center justify-center">
-                                    <span className="text-white text-sm font-black flex items-center justify-center">
-                                      Click here to visit
-                                      <span className="ml-2">→</span>
+                                <div className="inline-block">
+                                  <div className="px-2.5 py-1 bg-white/30 backdrop-blur-xl border-2 border-white/50 rounded-md">
+                                    <span className="text-white text-xs font-bold flex items-center">
+                                      Click to visit →
                                     </span>
                                   </div>
                                 </div>
@@ -602,11 +601,10 @@ const Index = () => {
                             ))}
                           </div>
                           {internship.href && (
-                            <div className="inline-block w-full">
-                              <div className="px-3 py-1.5 bg-white/30 backdrop-blur-xl border-2 border-white/50 rounded-lg h-[32px] flex items-center justify-center">
-                                <span className="text-white text-sm font-black flex items-center justify-center">
-                                  Click here to view
-                                  <span className="ml-2">→</span>
+                            <div className="inline-block">
+                              <div className="px-2.5 py-1 bg-white/30 backdrop-blur-xl border-2 border-white/50 rounded-md">
+                                <span className="text-white text-xs font-bold flex items-center">
+                                  Click to view →
                                 </span>
                               </div>
                             </div>
@@ -747,11 +745,10 @@ const Index = () => {
                             <h4 className="text-white font-bold text-[11px] mb-1 leading-tight line-clamp-1">{cert.name}</h4>
                             <p className="text-white/50 text-[10px] font-medium mb-2">{cert.org}</p>
                             {cert.href && (
-                              <div className="inline-block w-full">
-                                <div className="px-3 py-1.5 bg-white/30 backdrop-blur-xl border-2 border-white/50 rounded-lg h-[32px] flex items-center justify-center">
-                                  <p className="text-white text-sm font-black flex items-center justify-center">
-                                    Click here to view
-                                    <span className="ml-2">→</span>
+                              <div className="inline-block">
+                                <div className="px-2.5 py-1 bg-white/30 backdrop-blur-xl border-2 border-white/50 rounded-md">
+                                  <p className="text-white text-xs font-bold flex items-center">
+                                    Click to view →
                                   </p>
                                 </div>
                               </div>
