@@ -177,7 +177,7 @@ const Index = () => {
   }), []);
 
   const certifications = useMemo(() => [
-    { name: 'Neo4j Certified Professional', org: 'Neo4j', href: null },
+    { name: 'Neo4j Certified Professional', org: 'Neo4j', href: 'https://graphacademy.neo4j.com/c/f5f586e2-cba3-4ad4-bf3a-dea4bed55d4b/' },
     { name: 'Data Analyst Certification', org: 'OneRoadmap', href: 'https://oneroadmap.io/skills/da/certificate/CERT-A07318AE' },
     { name: 'AWS Solutions Architecture', org: 'Forage', href: 'https://raw.githubusercontent.com/shishir-katakam/portfolio/main/public/image.png' },
     { name: 'Deloitte Cyber Security', org: 'Forage', href: 'https://raw.githubusercontent.com/shishir-katakam/portfolio/main/public/Screenshot 2025-10-12 173902.png' },
