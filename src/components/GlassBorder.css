@@ -1,0 +1,92 @@
+.glass-border {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.glass-border::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 2px;
+  background: linear-gradient(135deg, 
+    rgba(255, 255, 255, 0.4) 0%,
+    rgba(255, 255, 255, 0.1) 25%,
+    rgba(255, 255, 255, 0.05) 50%,
+    rgba(255, 255, 255, 0.1) 75%,
+    rgba(255, 255, 255, 0.4) 100%
+  );
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  animation: glass-shimmer 3s linear infinite;
+}
+
+.glass-border::after {
+  content: '';
+  position: absolute;
+  inset: -50%;
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 255, 255, 0.15) 0%,
+    transparent 70%
+  );
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+}
+
+.glass-border:hover::after {
+  opacity: 1;
+}
+
+.glass-border-blue::before {
+  background: linear-gradient(135deg, 
+    rgba(59, 130, 246, 0.6) 0%,
+    rgba(147, 197, 253, 0.3) 25%,
+    rgba(59, 130, 246, 0.2) 50%,
+    rgba(147, 197, 253, 0.3) 75%,
+    rgba(59, 130, 246, 0.6) 100%
+  );
+}
+
+.glass-border-pink::before {
+  background: linear-gradient(135deg, 
+    rgba(236, 72, 153, 0.6) 0%,
+    rgba(251, 207, 232, 0.3) 25%,
+    rgba(236, 72, 153, 0.2) 50%,
+    rgba(251, 207, 232, 0.3) 75%,
+    rgba(236, 72, 153, 0.6) 100%
+  );
+}
+
+@keyframes glass-shimmer {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.glass-border-content {
+  position: relative;
+  z-index: 1;
+  border-radius: inherit;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  height: 100%;
+  width: 100%;
+}
+
+
+

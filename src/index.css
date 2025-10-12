@@ -1,0 +1,228 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 0 0% 7%;
+    --foreground: 0 0% 98%;
+
+    --card: 0 0% 12%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 0 0% 10%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 263 70% 60%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 0 0% 18%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 0 0% 20%;
+    --muted-foreground: 0 0% 65%;
+
+    --accent: 263 70% 60%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 20%;
+    --input: 0 0% 18%;
+    --ring: 263 70% 60%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 10%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 263 70% 60%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 0 0% 18%;
+    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-border: 0 0% 20%;
+    --sidebar-ring: 263 70% 60%;
+  }
+
+  .dark {
+    --background: 0 0% 7%;
+    --foreground: 0 0% 98%;
+
+    --card: 0 0% 12%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 0 0% 10%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 263 70% 60%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 0 0% 18%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 0 0% 20%;
+    --muted-foreground: 0 0% 65%;
+
+    --accent: 263 70% 60%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 20%;
+    --input: 0 0% 18%;
+    --ring: 263 70% 60%;
+    
+    --sidebar-background: 0 0% 10%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 263 70% 60%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 0 0% 18%;
+    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-border: 0 0% 20%;
+    --sidebar-ring: 263 70% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    /* Performance optimizations for 120fps */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeSpeed;
+    /* Hide default cursor globally */
+    cursor: none;
+  }
+
+  /* Hide cursor on all interactive elements */
+  *, *:hover, *:focus, *:active {
+    cursor: none !important;
+  }
+
+  /* Hide Unicorn Studio watermark */
+  .unicorn-container a[href*="unicorn.studio"],
+  .unicorn-container div[class*="watermark"],
+  .unicorn-container div[style*="position: absolute"][style*="bottom"],
+  .unicorn-container > div > a {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+  }
+
+  /* Smooth scrolling for the entire page */
+  html {
+    scroll-behavior: smooth;
+    /* Base font size that will scale everything proportionally */
+    font-size: clamp(12px, 1.5vw, 16px);
+  }
+
+  /* Responsive scaling for different devices */
+  @media (max-width: 640px) {
+    /* Mobile phones */
+    html {
+      font-size: clamp(10px, 2vw, 14px);
+    }
+  }
+
+  @media (min-width: 641px) and (max-width: 768px) {
+    /* Tablets portrait */
+    html {
+      font-size: clamp(11px, 1.8vw, 15px);
+    }
+  }
+
+  @media (min-width: 769px) and (max-width: 1024px) {
+    /* Tablets landscape */
+    html {
+      font-size: clamp(12px, 1.6vw, 16px);
+    }
+  }
+
+  @media (min-width: 1025px) and (max-width: 1440px) {
+    /* Small desktops/laptops */
+    html {
+      font-size: clamp(12px, 1.5vw, 16px);
+    }
+  }
+
+  @media (min-width: 1441px) and (max-width: 1920px) {
+    /* Large desktops */
+    html {
+      font-size: clamp(13px, 1.4vw, 17px);
+    }
+  }
+
+  @media (min-width: 1921px) {
+    /* Ultra-wide/4K displays */
+    html {
+      font-size: clamp(14px, 1.3vw, 18px);
+    }
+  }
+
+  /* Ensure body takes full height */
+  body {
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* Custom scrollbar styling */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--background));
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--primary));
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--primary) / 0.8);
+  }
+  
+  /* Animation keyframes */
+  @keyframes float {
+    0%, 100% {
+      transform: translate3d(0, 0, 0);
+    }
+    50% {
+      transform: translate3d(0, -20px, 0);
+    }
+  }
+  
+  @keyframes gradient {
+    0%, 100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+  
+  /* Performance optimizations for specific elements */
+  canvas,
+  video,
+  img {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    transform: translate3d(0, 0, 0);
+  }
+  
+  /* Optimize animations */
+  [class*="animate-"],
+  [style*="animation"] {
+    will-change: transform, opacity;
+  }
+}
