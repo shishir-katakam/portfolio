@@ -22,7 +22,9 @@ const TargetCursor = ({ targetSelector = '.cursor-target', spinDuration = 2, hid
       x,
       y,
       duration: 0.1,
-      ease: 'power3.out'
+      ease: 'power3.out',
+      force3D: true,
+      transformOrigin: '50% 50%'
     });
   }, []);
 
@@ -54,7 +56,8 @@ const TargetCursor = ({ targetSelector = '.cursor-target', spinDuration = 2, hid
       xPercent: -50,
       yPercent: -50,
       x: window.innerWidth / 2,
-      y: window.innerHeight / 2
+      y: window.innerHeight / 2,
+      force3D: true
     });
 
     const createSpinTimeline = () => {
@@ -63,7 +66,13 @@ const TargetCursor = ({ targetSelector = '.cursor-target', spinDuration = 2, hid
       }
       spinTl.current = gsap
         .timeline({ repeat: -1 })
-        .to(cursor, { rotation: '+=360', duration: spinDuration, ease: 'none' });
+        .to(cursor, { 
+          rotation: '+=360', 
+          duration: spinDuration, 
+          ease: 'none',
+          force3D: true,
+          transformOrigin: '50% 50%'
+        });
     };
 
     createSpinTimeline();
@@ -147,7 +156,7 @@ const TargetCursor = ({ targetSelector = '.cursor-target', spinDuration = 2, hid
       gsap.killTweensOf(cursorRef.current, 'rotation');
       spinTl.current?.pause();
 
-      gsap.set(cursorRef.current, { rotation: 0 });
+      gsap.set(cursorRef.current, { rotation: 0, force3D: true });
 
       const updateCorners = (mouseX, mouseY) => {
         const rect = target.getBoundingClientRect();
@@ -204,7 +213,8 @@ const TargetCursor = ({ targetSelector = '.cursor-target', spinDuration = 2, hid
               x: offsets[index].x,
               y: offsets[index].y,
               duration: 0.2,
-              ease: 'power2.out'
+              ease: 'power2.out',
+              force3D: true
             },
             0
           );
@@ -218,14 +228,9 @@ const TargetCursor = ({ targetSelector = '.cursor-target', spinDuration = 2, hid
         isAnimatingToTarget = false;
       }, 1);
 
-      let moveThrottle = null;
       const targetMove = ev => {
-        if (moveThrottle || isAnimatingToTarget) return;
-        moveThrottle = requestAnimationFrame(() => {
-          const mouseEvent = ev;
-          updateCorners(mouseEvent.clientX, mouseEvent.clientY);
-          moveThrottle = null;
-        });
+        if (isAnimatingToTarget) return;
+        updateCorners(ev.clientX, ev.clientY);
       };
 
       const leaveHandler = () => {
@@ -252,7 +257,8 @@ const TargetCursor = ({ targetSelector = '.cursor-target', spinDuration = 2, hid
                 x: positions[index].x,
                 y: positions[index].y,
                 duration: 0.3,
-                ease: 'power3.out'
+                ease: 'power3.out',
+                force3D: true
               },
               0
             );
@@ -267,12 +273,18 @@ const TargetCursor = ({ targetSelector = '.cursor-target', spinDuration = 2, hid
             spinTl.current.kill();
             spinTl.current = gsap
               .timeline({ repeat: -1 })
-              .to(cursorRef.current, { rotation: '+=360', duration: spinDuration, ease: 'none' });
+              .to(cursorRef.current, { 
+                rotation: '+=360', 
+                duration: spinDuration, 
+                ease: 'none',
+                force3D: true
+              });
 
             gsap.to(cursorRef.current, {
               rotation: normalizedRotation + 360,
               duration: spinDuration * (1 - normalizedRotation / 360),
               ease: 'none',
+              force3D: true,
               onComplete: () => {
                 spinTl.current?.restart();
               }
@@ -316,7 +328,12 @@ const TargetCursor = ({ targetSelector = '.cursor-target', spinDuration = 2, hid
       spinTl.current.kill();
       spinTl.current = gsap
         .timeline({ repeat: -1 })
-        .to(cursorRef.current, { rotation: '+=360', duration: spinDuration, ease: 'none' });
+        .to(cursorRef.current, { 
+          rotation: '+=360', 
+          duration: spinDuration, 
+          ease: 'none',
+          force3D: true
+        });
     }
   }, [spinDuration]);
 
