@@ -742,12 +742,12 @@ const Index = () => {
                         <div className="relative">
                           <div className="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 rounded-lg blur-lg transition-opacity duration-500"></div>
                           <div className="relative p-3 bg-white/5 backdrop-blur-xl border border-white/10 rounded-lg hover:bg-white/10 hover:border-white/30 transition-all h-full group-hover:scale-105 will-change-transform">
-                            <h4 className="text-white font-bold text-[11px] mb-1 leading-tight line-clamp-1">{cert.name}</h4>
+                            <h4 className="text-white font-bold text-sm mb-1 leading-tight line-clamp-1">{cert.name}</h4>
                             <p className="text-white/50 text-[10px] font-medium mb-2">{cert.org}</p>
                             {cert.href && (
                               <div className="inline-block">
-                                <div className="px-2.5 py-1 bg-white/30 backdrop-blur-xl border-2 border-white/50 rounded-md">
-                                  <p className="text-white text-xs font-bold flex items-center">
+                                <div className="px-2 py-0.5 bg-white/30 backdrop-blur-xl border-2 border-white/50 rounded-md">
+                                  <p className="text-white text-[10px] font-bold flex items-center">
                                     Click to view →
                                   </p>
                                 </div>
