@@ -375,7 +375,7 @@ const Index = () => {
                   italic={true}
                   textColor="#ffffff"
                   strokeColor="#ff0000"
-                  minFontSize={96}
+                  minFontSize={140}
                 />
               </div>
             </FadeContent>
@@ -483,7 +483,7 @@ const Index = () => {
                                   ))}
                                 </div>
                                 <div className="inline-block w-full">
-                                  <div className="px-4 py-2.5 bg-white/30 backdrop-blur-xl border-2 border-white/50 rounded-lg">
+                                  <div className="px-4 py-2.5 bg-white/30 backdrop-blur-xl border-2 border-white/50 rounded-lg h-[46px] flex items-center justify-center">
                                     <span className="text-white text-sm font-black flex items-center justify-center">
                                       Click here to visit
                                       <span className="ml-2">→</span>
@@ -603,7 +603,7 @@ const Index = () => {
                           </div>
                           {internship.href && (
                             <div className="inline-block w-full">
-                              <div className="px-4 py-2.5 bg-white/30 backdrop-blur-xl border-2 border-white/50 rounded-lg">
+                              <div className="px-4 py-2.5 bg-white/30 backdrop-blur-xl border-2 border-white/50 rounded-lg h-[46px] flex items-center justify-center">
                                 <span className="text-white text-sm font-black flex items-center justify-center">
                                   Click here to view
                                   <span className="ml-2">→</span>
@@ -748,7 +748,7 @@ const Index = () => {
                             <p className="text-white/50 text-[10px] font-medium mb-2">{cert.org}</p>
                             {cert.href && (
                               <div className="inline-block w-full">
-                                <div className="px-4 py-2.5 bg-white/30 backdrop-blur-xl border-2 border-white/50 rounded-lg">
+                                <div className="px-4 py-2.5 bg-white/30 backdrop-blur-xl border-2 border-white/50 rounded-lg h-[46px] flex items-center justify-center">
                                   <p className="text-white text-sm font-black flex items-center justify-center">
                                     Click here to view
                                     <span className="ml-2">→</span>
