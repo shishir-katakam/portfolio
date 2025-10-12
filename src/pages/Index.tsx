@@ -382,14 +382,14 @@ const Index = () => {
 
             {/* Headline */}
             <FadeContent blur={false} duration={500} easing="ease-out" initialOpacity={0} delay={400}>
-              <h2 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-black text-white mb-6 md:mb-8 leading-tight">
+              <h2 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-black text-white mb-6 md:mb-8 leading-tight">
                 Building the{' '}
-                <span className="relative inline-block text-white">
+                <span className="relative inline-block text-4xl sm:text-5xl md:text-7xl lg:text-8xl text-white">
                   Future
                   <Star className="absolute -top-3 md:-top-4 -right-6 md:-right-8 text-white/60 animate-spin-slow" size={20} />
                 </span>
                 <br />
-                with <span className="text-white">AI</span> & <span className="text-white">Innovation</span>
+                with <span className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl text-white">AI</span> & <span className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl text-white">Innovation</span>
               </h2>
             </FadeContent>
 
@@ -403,28 +403,28 @@ const Index = () => {
 
             {/* CTA Buttons */}
             <FadeContent blur={false} duration={500} easing="ease-out" initialOpacity={0} delay={800}>
-              <div className="flex flex-row flex-nowrap justify-center gap-3 md:gap-6 mb-0">
-                <a href="mailto:shishirkatakam8@gmail.com" className="cursor-target group flex-1 max-w-[160px] md:max-w-none">
-                  <div className="relative px-4 py-3 md:px-8 md:py-4 bg-white text-black rounded-2xl font-bold text-sm md:text-lg overflow-hidden group-hover:scale-105 transition-all hover:bg-white/90 text-center">
-                    <span className="relative flex items-center justify-center whitespace-nowrap">
-                      <Mail className="mr-1 md:mr-2" size={16} />
-                      <span className="hidden sm:inline">Let's </span>Collaborate
-                      <Sparkles className="ml-1 md:ml-2" size={12} />
+              <div className="flex flex-row flex-nowrap justify-center gap-2 md:gap-6 mb-0 max-w-full px-4">
+                <a href="mailto:shishirkatakam8@gmail.com" className="cursor-target group">
+                  <div className="w-[110px] sm:w-[140px] md:w-auto relative px-3 py-3 md:px-8 md:py-4 bg-white text-black rounded-2xl font-bold text-xs sm:text-sm md:text-lg overflow-hidden group-hover:scale-105 transition-all hover:bg-white/90 text-center">
+                    <span className="relative flex items-center justify-center">
+                      <Mail className="mr-1 md:mr-2" size={14} />
+                      <span className="hidden md:inline">Let's </span>Collab
+                      <Sparkles className="ml-1 md:ml-2 hidden sm:inline" size={12} />
                     </span>
                   </div>
                 </a>
-                <a href="https://github.com/Shishir-Katakam" target="_blank" rel="noopener noreferrer" className="cursor-target group flex-1 max-w-[140px] md:max-w-none">
-                  <div className="px-4 py-3 md:px-8 md:py-4 bg-white/10 backdrop-blur-xl border-2 border-white/20 rounded-2xl font-bold text-sm md:text-lg text-white hover:bg-white/20 hover:border-white/40 transition-all group-hover:scale-105 text-center">
-                    <span className="flex items-center justify-center whitespace-nowrap">
-                      <Github className="mr-1 md:mr-2" size={16} />
+                <a href="https://github.com/Shishir-Katakam" target="_blank" rel="noopener noreferrer" className="cursor-target group">
+                  <div className="w-[110px] sm:w-[140px] md:w-auto px-3 py-3 md:px-8 md:py-4 bg-white/10 backdrop-blur-xl border-2 border-white/20 rounded-2xl font-bold text-xs sm:text-sm md:text-lg text-white hover:bg-white/20 hover:border-white/40 transition-all group-hover:scale-105 text-center">
+                    <span className="flex items-center justify-center">
+                      <Github className="mr-1 md:mr-2" size={14} />
                       GitHub
                     </span>
                   </div>
                 </a>
-                <a href="https://linkedin.com/in/shishir-katakam" target="_blank" rel="noopener noreferrer" className="cursor-target group flex-1 max-w-[140px] md:max-w-none">
-                  <div className="px-4 py-3 md:px-8 md:py-4 bg-white/10 backdrop-blur-xl border-2 border-white/20 rounded-2xl font-bold text-sm md:text-lg text-white hover:bg-white/20 hover:border-white/40 transition-all group-hover:scale-105 text-center">
-                    <span className="flex items-center justify-center whitespace-nowrap">
-                      <Linkedin className="mr-1 md:mr-2" size={16} />
+                <a href="https://linkedin.com/in/shishir-katakam" target="_blank" rel="noopener noreferrer" className="cursor-target group">
+                  <div className="w-[110px] sm:w-[140px] md:w-auto px-3 py-3 md:px-8 md:py-4 bg-white/10 backdrop-blur-xl border-2 border-white/20 rounded-2xl font-bold text-xs sm:text-sm md:text-lg text-white hover:bg-white/20 hover:border-white/40 transition-all group-hover:scale-105 text-center">
+                    <span className="flex items-center justify-center">
+                      <Linkedin className="mr-1 md:mr-2" size={14} />
                       LinkedIn
                     </span>
                   </div>
