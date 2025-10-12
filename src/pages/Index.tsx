@@ -7,6 +7,7 @@ import FadeContent from '@/components/FadeContent';
 import GlassBorder from '@/components/GlassBorder';
 import TargetCursor from '@/components/TargetCursor';
 import LightRays from '@/components/LightRays';
+import Aurora from '@/components/Aurora';
 
 const GITHUB_BASE_URL = 'https://raw.githubusercontent.com/shishir-katakam/niora/main';
 
@@ -294,8 +295,17 @@ const Index = () => {
         hideDefaultCursor={true}
       />
 
-      {/* Simplified background for better compatibility */}
-      <div style={{ position: 'fixed', top: 0, left: 0, width: '100%', height: '100%', zIndex: -1, background: 'linear-gradient(45deg, #1a1a1a 0%, #2d1b69 50%, #1a1a1a 100%)', backgroundSize: '400% 400%', animation: 'gradient 15s ease infinite' }} />
+      {/* Aurora Background */}
+      <div style={{ position: 'fixed', top: 0, left: 0, width: '100%', height: '100%', zIndex: -1 }}>
+        <Aurora
+          colorStops={["#3A29FF", "#FF94B4", "#FF3232"]}
+          blend={0.5}
+          amplitude={1.0}
+          speed={0.5}
+        />
+        {/* Overlay gradient for better contrast */}
+        <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', background: 'linear-gradient(180deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.7) 100%)', pointerEvents: 'none' }} />
+      </div>
           
       {/* Floating Particles - Minimal */}
       <div className="fixed inset-0 z-0 pointer-events-none">
