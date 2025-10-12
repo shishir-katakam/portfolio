@@ -122,49 +122,49 @@ All colors MUST be HSL.
   html {
     scroll-behavior: smooth;
     /* Base font size that will scale everything proportionally */
-    font-size: clamp(12px, 1.5vw, 16px);
+    font-size: 16px;
   }
 
-  /* Responsive scaling for different devices */
+  /* Responsive scaling for different devices - MUCH BIGGER for mobile/tablet */
   @media (max-width: 640px) {
-    /* Mobile phones */
+    /* Mobile phones - SIGNIFICANTLY INCREASED */
     html {
-      font-size: clamp(10px, 2vw, 14px);
+      font-size: clamp(16px, 4vw, 20px);
     }
   }
 
   @media (min-width: 641px) and (max-width: 768px) {
-    /* Tablets portrait */
+    /* Tablets portrait - INCREASED */
     html {
-      font-size: clamp(11px, 1.8vw, 15px);
+      font-size: clamp(16px, 3vw, 18px);
     }
   }
 
   @media (min-width: 769px) and (max-width: 1024px) {
-    /* Tablets landscape */
+    /* Tablets landscape - INCREASED */
     html {
-      font-size: clamp(12px, 1.6vw, 16px);
+      font-size: clamp(16px, 2.5vw, 18px);
     }
   }
 
   @media (min-width: 1025px) and (max-width: 1440px) {
     /* Small desktops/laptops */
     html {
-      font-size: clamp(12px, 1.5vw, 16px);
+      font-size: 16px;
     }
   }
 
   @media (min-width: 1441px) and (max-width: 1920px) {
     /* Large desktops */
     html {
-      font-size: clamp(13px, 1.4vw, 17px);
+      font-size: clamp(16px, 1.2vw, 18px);
     }
   }
 
   @media (min-width: 1921px) {
     /* Ultra-wide/4K displays */
     html {
-      font-size: clamp(14px, 1.3vw, 18px);
+      font-size: clamp(17px, 1.1vw, 20px);
     }
   }
 
@@ -172,6 +172,51 @@ All colors MUST be HSL.
   body {
     min-height: 100vh;
     overflow-x: hidden;
+  }
+
+  /* Force minimum readable sizes on mobile */
+  @media (max-width: 640px) {
+    /* All text elements get minimum readable sizes */
+    h1 {
+      font-size: clamp(2rem, 8vw, 4rem) !important;
+    }
+    h2 {
+      font-size: clamp(1.75rem, 6vw, 3rem) !important;
+    }
+    h3 {
+      font-size: clamp(1.5rem, 5vw, 2.5rem) !important;
+    }
+    h4 {
+      font-size: clamp(1.25rem, 4vw, 2rem) !important;
+    }
+    p, span, div {
+      font-size: clamp(1rem, 3vw, 1.25rem);
+    }
+    button, a {
+      font-size: clamp(1rem, 3vw, 1.25rem);
+    }
+  }
+
+  @media (min-width: 641px) and (max-width: 1024px) {
+    /* Tablets */
+    h1 {
+      font-size: clamp(2.5rem, 6vw, 4.5rem) !important;
+    }
+    h2 {
+      font-size: clamp(2rem, 5vw, 3.5rem) !important;
+    }
+    h3 {
+      font-size: clamp(1.75rem, 4vw, 3rem) !important;
+    }
+    h4 {
+      font-size: clamp(1.5rem, 3.5vw, 2.5rem) !important;
+    }
+    p, span, div {
+      font-size: clamp(1.125rem, 2.5vw, 1.5rem);
+    }
+    button, a {
+      font-size: clamp(1.125rem, 2.5vw, 1.5rem);
+    }
   }
 
   /* Custom scrollbar styling */
