@@ -314,8 +314,8 @@ const Index = () => {
         ))}
       </div>
 
-      {/* ElasticSlider in bottom right corner - Hidden on mobile, visible on desktop */}
-      <div className="hidden md:block fixed bottom-8 right-8 z-50 w-64 pr-16 overflow-visible">
+      {/* ElasticSlider - Responsive positioning for all devices */}
+      <div className="fixed bottom-4 left-1/2 -translate-x-1/2 md:left-auto md:translate-x-0 md:bottom-8 md:right-8 z-50 w-40 sm:w-48 md:w-64 pr-8 sm:pr-10 md:pr-16 overflow-visible">
         <ElasticSlider
           leftIcon={getVolumeIcon()}
           rightIcon={null}
