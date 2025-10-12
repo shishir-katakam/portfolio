@@ -332,7 +332,7 @@ const Index = () => {
       <div className="relative z-10">
         
         {/* HERO SECTION - Epic Entrance */}
-        <section className="min-h-screen flex flex-col items-center justify-center px-8 md:px-16 lg:px-24 relative">
+        <section className="min-h-0 md:min-h-screen flex flex-col items-center justify-center px-8 md:px-16 lg:px-24 py-16 md:py-0 relative">
           
           {/* Animated Background Orbs - Optimized */}
           <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-white/5 rounded-full blur-3xl animate-pulse will-change-transform" />
@@ -342,13 +342,13 @@ const Index = () => {
             
             {/* Status Badge */}
             <FadeContent blur={false} duration={600} easing="ease-out" initialOpacity={0}>
-              <div className="inline-flex items-center px-6 py-3 mb-8 bg-white/10 backdrop-blur-xl border border-white/20 rounded-full cursor-target group hover:scale-105 transition-transform will-change-transform">
-                <span className="relative flex h-3 w-3 mr-3">
+              <div className="inline-flex items-center px-4 md:px-6 py-2 md:py-3 mb-6 md:mb-8 bg-white/10 backdrop-blur-xl border border-white/20 rounded-full cursor-target group hover:scale-105 transition-transform will-change-transform">
+                <span className="relative flex h-3 w-3 mr-2 md:mr-3">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white/60 opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-3 w-3 bg-white/90"></span>
                 </span>
-                <Sparkles className="mr-2 text-white/80" size={18} />
-                <span className="text-white font-medium">Open to Internships & Collaborations</span>
+                <Sparkles className="mr-1 md:mr-2 text-white/80" size={16} />
+                <span className="text-white font-medium text-sm md:text-base">Open to Internships & Collaborations</span>
               </div>
             </FadeContent>
 
@@ -372,13 +372,13 @@ const Index = () => {
 
             {/* Headline */}
             <FadeContent blur={false} duration={500} easing="ease-out" initialOpacity={0} delay={400}>
-              <h2 className="text-4xl md:text-6xl lg:text-7xl font-black text-white mb-8 leading-tight">
+              <h2 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-black text-white mb-6 md:mb-8 leading-tight">
                 Building the{' '}
                 <span className="relative inline-block">
                   <span className="text-white">
                     Future
                   </span>
-                  <Star className="absolute -top-4 -right-8 text-white/60 animate-spin-slow" size={24} />
+                  <Star className="absolute -top-3 md:-top-4 -right-6 md:-right-8 text-white/60 animate-spin-slow" size={20} />
                 </span>
                 <br />
                 with <span className="text-white/90">AI</span> & <span className="text-white/90">Innovation</span>
@@ -387,7 +387,7 @@ const Index = () => {
 
             {/* Subtitle */}
             <FadeContent blur={false} duration={500} easing="ease-out" initialOpacity={0} delay={600}>
-              <p className="text-xl md:text-2xl text-white/80 mb-12 max-w-4xl mx-auto leading-relaxed">
+              <p className="text-lg sm:text-xl md:text-2xl text-white/80 mb-8 md:mb-12 max-w-4xl mx-auto leading-relaxed">
                 Second-year <span className="font-bold text-white">IT student at MGIT</span>, passionate about transforming ideas into 
                 <span className="text-white/90"> intelligent solutions</span> that make a real-world impact.
               </p>
@@ -395,28 +395,28 @@ const Index = () => {
 
             {/* CTA Buttons */}
             <FadeContent blur={false} duration={500} easing="ease-out" initialOpacity={0} delay={800}>
-              <div className="flex flex-wrap justify-center gap-6 mb-16">
+              <div className="flex flex-wrap justify-center gap-4 md:gap-6 mb-0">
                 <a href="mailto:shishirkatakam8@gmail.com" className="cursor-target group">
-                  <div className="relative px-8 py-4 bg-white text-black rounded-2xl font-bold overflow-hidden group-hover:scale-105 transition-all hover:bg-white/90">
+                  <div className="relative px-6 py-3 md:px-8 md:py-4 bg-white text-black rounded-2xl font-bold text-base md:text-lg overflow-hidden group-hover:scale-105 transition-all hover:bg-white/90">
                     <span className="relative flex items-center">
-                      <Mail className="mr-2" size={20} />
+                      <Mail className="mr-2" size={18} />
                       Let's Collaborate
-                      <Sparkles className="ml-2" size={16} />
+                      <Sparkles className="ml-2" size={14} />
                     </span>
                   </div>
                 </a>
                 <a href="https://github.com/Shishir-Katakam" target="_blank" rel="noopener noreferrer" className="cursor-target group">
-                  <div className="px-8 py-4 bg-white/10 backdrop-blur-xl border-2 border-white/20 rounded-2xl font-bold text-white hover:bg-white/20 hover:border-white/40 transition-all group-hover:scale-105">
+                  <div className="px-6 py-3 md:px-8 md:py-4 bg-white/10 backdrop-blur-xl border-2 border-white/20 rounded-2xl font-bold text-base md:text-lg text-white hover:bg-white/20 hover:border-white/40 transition-all group-hover:scale-105">
                     <span className="flex items-center">
-                      <Github className="mr-2" size={20} />
+                      <Github className="mr-2" size={18} />
                       View GitHub
                     </span>
                   </div>
                 </a>
                 <a href="https://linkedin.com/in/shishir-katakam" target="_blank" rel="noopener noreferrer" className="cursor-target group">
-                  <div className="px-8 py-4 bg-white/10 backdrop-blur-xl border-2 border-white/20 rounded-2xl font-bold text-white hover:bg-white/20 hover:border-white/40 transition-all group-hover:scale-105">
+                  <div className="px-6 py-3 md:px-8 md:py-4 bg-white/10 backdrop-blur-xl border-2 border-white/20 rounded-2xl font-bold text-base md:text-lg text-white hover:bg-white/20 hover:border-white/40 transition-all group-hover:scale-105">
                     <span className="flex items-center">
-                      <Linkedin className="mr-2" size={20} />
+                      <Linkedin className="mr-2" size={18} />
                       LinkedIn
                     </span>
                   </div>
