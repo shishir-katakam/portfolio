@@ -433,12 +433,18 @@ const Index = () => {
                                   {project.description}
                                 </p>
                               </div>
-                              <div className="flex flex-wrap gap-1">
-                                {project.tech.map((tech, i) => (
-                                  <span key={i} className="px-1.5 py-0.5 bg-white/20 backdrop-blur-xl border border-white/30 rounded text-white text-[8px] font-semibold">
-                                    {tech}
-                                  </span>
-                                ))}
+                              <div className="space-y-2">
+                                <div className="flex flex-wrap gap-1">
+                                  {project.tech.map((tech, i) => (
+                                    <span key={i} className="px-1.5 py-0.5 bg-white/20 backdrop-blur-xl border border-white/30 rounded text-white text-[8px] font-semibold">
+                                      {tech}
+                                    </span>
+                                  ))}
+                                </div>
+                                <div className="text-white/90 text-xs font-bold flex items-center">
+                                  <span className="underline">Click here to visit</span>
+                                  <span className="ml-1">→</span>
+                                </div>
                               </div>
                             </div>
                           </PixelCard>
@@ -683,6 +689,9 @@ const Index = () => {
                           <div className="relative p-2 bg-white/5 backdrop-blur-xl border border-white/10 rounded-lg hover:bg-white/10 hover:border-white/30 transition-all h-full group-hover:scale-105 will-change-transform">
                             <h4 className="text-white font-bold text-[10px] mb-0.5 leading-tight line-clamp-1">{cert.name}</h4>
                             <p className="text-white/50 text-[9px] font-medium">{cert.org}</p>
+                            {cert.href && (
+                              <p className="text-white/70 text-[8px] font-semibold mt-1 underline">Click here to view</p>
+                            )}
                           </div>
                         </div>
                       );
