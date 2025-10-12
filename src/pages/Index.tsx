@@ -375,7 +375,7 @@ const Index = () => {
                   italic={true}
                   textColor="#ffffff"
                   strokeColor="#ff0000"
-                  minFontSize={48}
+                  minFontSize={72}
                 />
               </div>
             </FadeContent>
@@ -384,14 +384,12 @@ const Index = () => {
             <FadeContent blur={false} duration={500} easing="ease-out" initialOpacity={0} delay={400}>
               <h2 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-black text-white mb-6 md:mb-8 leading-tight">
                 Building the{' '}
-                <span className="relative inline-block">
-                  <span className="text-white">
-                    Future
-                  </span>
+                <span className="relative inline-block text-white">
+                  Future
                   <Star className="absolute -top-3 md:-top-4 -right-6 md:-right-8 text-white/60 animate-spin-slow" size={20} />
                 </span>
                 <br />
-                with <span className="text-white/90">AI</span> & <span className="text-white/90">Innovation</span>
+                with <span className="text-white">AI</span> & <span className="text-white">Innovation</span>
               </h2>
             </FadeContent>
 
@@ -405,28 +403,28 @@ const Index = () => {
 
             {/* CTA Buttons */}
             <FadeContent blur={false} duration={500} easing="ease-out" initialOpacity={0} delay={800}>
-              <div className="flex flex-wrap justify-center gap-4 md:gap-6 mb-0">
-                <a href="mailto:shishirkatakam8@gmail.com" className="cursor-target group">
-                  <div className="relative px-6 py-3 md:px-8 md:py-4 bg-white text-black rounded-2xl font-bold text-base md:text-lg overflow-hidden group-hover:scale-105 transition-all hover:bg-white/90">
-                    <span className="relative flex items-center">
-                      <Mail className="mr-2" size={18} />
-                      Let's Collaborate
-                      <Sparkles className="ml-2" size={14} />
+              <div className="flex flex-row flex-nowrap justify-center gap-3 md:gap-6 mb-0">
+                <a href="mailto:shishirkatakam8@gmail.com" className="cursor-target group flex-1 max-w-[160px] md:max-w-none">
+                  <div className="relative px-4 py-3 md:px-8 md:py-4 bg-white text-black rounded-2xl font-bold text-sm md:text-lg overflow-hidden group-hover:scale-105 transition-all hover:bg-white/90 text-center">
+                    <span className="relative flex items-center justify-center whitespace-nowrap">
+                      <Mail className="mr-1 md:mr-2" size={16} />
+                      <span className="hidden sm:inline">Let's </span>Collaborate
+                      <Sparkles className="ml-1 md:ml-2" size={12} />
                     </span>
                   </div>
                 </a>
-                <a href="https://github.com/Shishir-Katakam" target="_blank" rel="noopener noreferrer" className="cursor-target group">
-                  <div className="px-6 py-3 md:px-8 md:py-4 bg-white/10 backdrop-blur-xl border-2 border-white/20 rounded-2xl font-bold text-base md:text-lg text-white hover:bg-white/20 hover:border-white/40 transition-all group-hover:scale-105">
-                    <span className="flex items-center">
-                      <Github className="mr-2" size={18} />
-                      View GitHub
+                <a href="https://github.com/Shishir-Katakam" target="_blank" rel="noopener noreferrer" className="cursor-target group flex-1 max-w-[140px] md:max-w-none">
+                  <div className="px-4 py-3 md:px-8 md:py-4 bg-white/10 backdrop-blur-xl border-2 border-white/20 rounded-2xl font-bold text-sm md:text-lg text-white hover:bg-white/20 hover:border-white/40 transition-all group-hover:scale-105 text-center">
+                    <span className="flex items-center justify-center whitespace-nowrap">
+                      <Github className="mr-1 md:mr-2" size={16} />
+                      GitHub
                     </span>
                   </div>
                 </a>
-                <a href="https://linkedin.com/in/shishir-katakam" target="_blank" rel="noopener noreferrer" className="cursor-target group">
-                  <div className="px-6 py-3 md:px-8 md:py-4 bg-white/10 backdrop-blur-xl border-2 border-white/20 rounded-2xl font-bold text-base md:text-lg text-white hover:bg-white/20 hover:border-white/40 transition-all group-hover:scale-105">
-                    <span className="flex items-center">
-                      <Linkedin className="mr-2" size={18} />
+                <a href="https://linkedin.com/in/shishir-katakam" target="_blank" rel="noopener noreferrer" className="cursor-target group flex-1 max-w-[140px] md:max-w-none">
+                  <div className="px-4 py-3 md:px-8 md:py-4 bg-white/10 backdrop-blur-xl border-2 border-white/20 rounded-2xl font-bold text-sm md:text-lg text-white hover:bg-white/20 hover:border-white/40 transition-all group-hover:scale-105 text-center">
+                    <span className="flex items-center justify-center whitespace-nowrap">
+                      <Linkedin className="mr-1 md:mr-2" size={16} />
                       LinkedIn
                     </span>
                   </div>
@@ -460,9 +458,9 @@ const Index = () => {
               {featuredProjects.map((project, index) => (
                 <FadeContent key={index} blur={false} duration={600} easing="ease-out" initialOpacity={0} delay={300 + index * 200}>
                   <a href={project.href} target="_blank" rel="noopener noreferrer" className="block cursor-target group">
-                    <div className="relative h-[180px] sm:h-[190px] md:h-[180px] w-full">
+                    <div className="relative h-[220px] sm:h-[210px] md:h-[200px] w-full">
                       <GlassBorder color={project.color}>
-                        <div className="relative w-full h-[180px] sm:h-[190px] md:h-[180px]">
+                        <div className="relative w-full h-[220px] sm:h-[210px] md:h-[200px]">
                           <PixelCard variant={project.color} className="cursor-pointer">
                             <div className="relative z-10 p-4 flex flex-col justify-between h-full">
                               <div>
@@ -477,17 +475,17 @@ const Index = () => {
                                 </p>
                               </div>
                               <div className="space-y-2">
-                                <div className="flex flex-wrap gap-1">
+                                <div className="flex flex-wrap gap-1 mb-2">
                                   {project.tech.map((tech, i) => (
-                                    <span key={i} className="px-1.5 py-0.5 bg-white/20 backdrop-blur-xl border border-white/30 rounded text-white text-[8px] font-semibold">
+                                    <span key={i} className="px-1.5 py-0.5 bg-white/20 backdrop-blur-xl border border-white/30 rounded text-white text-[8px] md:text-[10px] font-semibold">
                                       {tech}
                                     </span>
                                   ))}
                                 </div>
-                                <div className="inline-block px-3 py-1.5 bg-white/20 backdrop-blur-xl border border-white/40 rounded-lg mt-2">
-                                  <span className="text-white text-xs font-bold flex items-center">
+                                <div className="inline-block px-3 py-2 md:px-4 md:py-2 bg-white/30 backdrop-blur-xl border-2 border-white/50 rounded-lg">
+                                  <span className="text-white text-xs md:text-sm font-black flex items-center">
                                     Click here to visit
-                                    <span className="ml-2">→</span>
+                                    <span className="ml-2 text-base">→</span>
                                   </span>
                                 </div>
                               </div>
@@ -593,12 +591,22 @@ const Index = () => {
                         </div>
                         <div className="text-white/50 text-[10px] font-medium mb-3">{internship.date}</div>
                         <p className="text-white/70 text-xs leading-relaxed mb-3 flex-grow">{internship.description}</p>
-                        <div className="flex flex-wrap gap-1.5">
-                          {internship.skills.map((skill, i) => (
-                            <span key={i} className="px-2 py-0.5 bg-white/10 border border-white/20 rounded text-white text-[9px] font-medium">
-                              {skill}
-                            </span>
-                          ))}
+                        <div className="space-y-2">
+                          <div className="flex flex-wrap gap-1.5">
+                            {internship.skills.map((skill, i) => (
+                              <span key={i} className="px-2 py-0.5 bg-white/10 border border-white/20 rounded text-white text-[9px] md:text-[10px] font-medium">
+                                {skill}
+                              </span>
+                            ))}
+                          </div>
+                          {internship.href && (
+                            <div className="inline-block px-3 py-2 bg-white/30 backdrop-blur-xl border-2 border-white/50 rounded-lg mt-2">
+                              <span className="text-white text-xs md:text-sm font-black flex items-center">
+                                Click here to view
+                                <span className="ml-2 text-base">→</span>
+                              </span>
+                            </div>
+                          )}
                         </div>
                       </div>
                     </div>
