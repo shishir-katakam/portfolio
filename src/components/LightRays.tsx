@@ -243,6 +243,7 @@ void main() {
       const updatePlacement = () => {
         if (!containerRef.current || !renderer) return;
 
+        // Optimize for 120 FPS - use native DPR but cap at 2 for performance
         renderer.dpr = Math.min(window.devicePixelRatio, 2);
 
         const { clientWidth: wCSS, clientHeight: hCSS } = containerRef.current;
@@ -264,6 +265,8 @@ void main() {
           return;
         }
 
+        animationIdRef.current = requestAnimationFrame(loop);
+
         uniforms.iTime.value = t * 0.001;
 
         if (followMouse && mouseInfluence > 0.0) {
@@ -277,9 +280,9 @@ void main() {
 
         try {
           renderer.render({ scene: mesh });
-          animationIdRef.current = requestAnimationFrame(loop);
         } catch (error) {
           console.warn('WebGL rendering error:', error);
+          cancelAnimationFrame(animationIdRef.current);
           return;
         }
       };

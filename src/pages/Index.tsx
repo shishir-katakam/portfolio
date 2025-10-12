@@ -196,7 +196,11 @@ const Index = () => {
         style={{
           position: 'relative',
           overflow: 'hidden',
-          background: '#000000'
+          background: '#000000',
+          transform: 'translateZ(0)',
+          backfaceVisibility: 'hidden',
+          perspective: 1000,
+          willChange: 'opacity'
         }}
       >
         {/* TargetCursor for intro screen */}
@@ -207,7 +211,16 @@ const Index = () => {
         />
 
         {/* LightRays WebGL Background */}
-        <div style={{ width: '100%', height: '100%', position: 'absolute', top: 0, left: 0 }}>
+        <div style={{ 
+          width: '100%', 
+          height: '100%', 
+          position: 'absolute', 
+          top: 0, 
+          left: 0,
+          transform: 'translateZ(0)',
+          backfaceVisibility: 'hidden',
+          willChange: 'transform'
+        }}>
           <LightRays
             raysOrigin="top-center"
             raysColor="#00ffff"
@@ -223,13 +236,25 @@ const Index = () => {
         </div>
 
         {/* Content Overlay */}
-        <div className="relative z-10 flex flex-col items-center justify-center min-h-screen px-8">
+        <div className="relative z-10 flex flex-col items-center justify-center min-h-screen px-8" style={{
+          transform: 'translateZ(0)',
+          backfaceVisibility: 'hidden'
+        }}>
           <div className="text-center space-y-8">
             {/* Title */}
-            <h1 className="text-6xl md:text-8xl font-black text-white mb-4 animate-fade-in drop-shadow-2xl">
+            <h1 className="text-6xl md:text-8xl font-black text-white mb-4 animate-fade-in drop-shadow-2xl" style={{
+              transform: 'translateZ(0)',
+              backfaceVisibility: 'hidden',
+              willChange: 'opacity, transform'
+            }}>
               Shishir Katakam
             </h1>
-            <p className="text-2xl md:text-3xl text-white/80 mb-12 animate-fade-in drop-shadow-lg" style={{ animationDelay: '0.2s' }}>
+            <p className="text-2xl md:text-3xl text-white/80 mb-12 animate-fade-in drop-shadow-lg" style={{ 
+              animationDelay: '0.2s',
+              transform: 'translateZ(0)',
+              backfaceVisibility: 'hidden',
+              willChange: 'opacity, transform'
+            }}>
               Portfolio
             </p>
 
@@ -237,14 +262,22 @@ const Index = () => {
             <button
               onClick={handleEnterSite}
               className="cursor-target group relative px-12 py-6 bg-white text-black rounded-full font-bold text-xl overflow-hidden hover:scale-110 transition-all duration-300 cursor-pointer animate-fade-in shadow-2xl"
-              style={{ animationDelay: '0.4s' }}
+              style={{ 
+                animationDelay: '0.4s',
+                transform: 'translateZ(0)',
+                backfaceVisibility: 'hidden',
+                willChange: 'opacity, transform'
+              }}
             >
               <span className="relative z-10 flex items-center gap-3">
                 <Sparkles size={24} />
                 Enter
                 <Rocket size={24} />
               </span>
-              <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-blue-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-blue-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{
+                transform: 'translateZ(0)',
+                backfaceVisibility: 'hidden'
+              }} />
             </button>
           </div>
         </div>
