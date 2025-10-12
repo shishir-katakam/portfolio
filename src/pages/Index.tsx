@@ -417,11 +417,11 @@ const Index = () => {
               {featuredProjects.map((project, index) => (
                 <FadeContent key={index} blur={false} duration={600} easing="ease-out" initialOpacity={0} delay={300 + index * 200}>
                   <a href={project.href} target="_blank" rel="noopener noreferrer" className="block cursor-target group">
-                    <div className="relative h-[140px] sm:h-[160px] md:h-[140px] w-full">
+                    <div className="relative h-[180px] sm:h-[190px] md:h-[180px] w-full">
                       <GlassBorder color={project.color}>
-                        <div className="relative w-full h-[140px] sm:h-[160px] md:h-[140px]">
+                        <div className="relative w-full h-[180px] sm:h-[190px] md:h-[180px]">
                           <PixelCard variant={project.color} className="cursor-pointer">
-                            <div className="relative z-10 p-3 flex flex-col justify-between h-full">
+                            <div className="relative z-10 p-4 flex flex-col justify-between h-full">
                               <div>
                                 <div className="flex items-center mb-2">
                                   <project.icon className="mr-2 text-white" size={22} />
@@ -441,9 +441,11 @@ const Index = () => {
                                     </span>
                                   ))}
                                 </div>
-                                <div className="text-white/90 text-xs font-bold flex items-center">
-                                  <span className="underline">Click here to visit</span>
-                                  <span className="ml-1">→</span>
+                                <div className="inline-block px-3 py-1.5 bg-white/20 backdrop-blur-xl border border-white/40 rounded-lg mt-2">
+                                  <span className="text-white text-xs font-bold flex items-center">
+                                    Click here to visit
+                                    <span className="ml-2">→</span>
+                                  </span>
                                 </div>
                               </div>
                             </div>
@@ -686,11 +688,13 @@ const Index = () => {
                       const content = (
                         <div className="relative">
                           <div className="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 rounded-lg blur-lg transition-opacity duration-500"></div>
-                          <div className="relative p-2 bg-white/5 backdrop-blur-xl border border-white/10 rounded-lg hover:bg-white/10 hover:border-white/30 transition-all h-full group-hover:scale-105 will-change-transform">
-                            <h4 className="text-white font-bold text-[10px] mb-0.5 leading-tight line-clamp-1">{cert.name}</h4>
-                            <p className="text-white/50 text-[9px] font-medium">{cert.org}</p>
+                          <div className="relative p-3 bg-white/5 backdrop-blur-xl border border-white/10 rounded-lg hover:bg-white/10 hover:border-white/30 transition-all h-full group-hover:scale-105 will-change-transform">
+                            <h4 className="text-white font-bold text-[11px] mb-1 leading-tight line-clamp-1">{cert.name}</h4>
+                            <p className="text-white/50 text-[10px] font-medium mb-2">{cert.org}</p>
                             {cert.href && (
-                              <p className="text-white/70 text-[8px] font-semibold mt-1 underline">Click here to view</p>
+                              <div className="inline-block px-2 py-1 bg-white/20 backdrop-blur-xl border border-white/30 rounded">
+                                <p className="text-white text-[9px] font-bold">Click here to view →</p>
+                              </div>
                             )}
                           </div>
                         </div>
