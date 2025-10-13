@@ -8,6 +8,7 @@ import GlassBorder from '@/components/GlassBorder';
 import TargetCursor from '@/components/TargetCursor';
 import LightRays from '@/components/LightRays';
 import Aurora from '@/components/Aurora';
+import ParticleFlow from '@/components/ParticleFlow';
 
 const GITHUB_BASE_URL = 'https://raw.githubusercontent.com/shishir-katakam/niora/main';
 
@@ -287,7 +288,7 @@ const Index = () => {
   }
 
   return (
-    <div className="min-h-screen relative overflow-x-hidden bg-black">
+    <div className="min-h-screen relative overflow-x-hidden" style={{ background: '#000000' }}>
       {/* TargetCursor - separate instance for main site */}
       <TargetCursor 
         key="main-cursor"
@@ -295,20 +296,53 @@ const Index = () => {
         hideDefaultCursor={true}
       />
 
-      {/* Aurora Background */}
-      <div style={{ position: 'fixed', top: 0, left: 0, width: '100%', height: '100%', zIndex: -1 }}>
-        <Aurora
-          colorStops={["#3A29FF", "#FF94B4", "#FF3232"]}
-          blend={0.5}
-          amplitude={1.0}
-          speed={0.5}
-        />
-        {/* Overlay gradient for better contrast */}
-        <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', background: 'linear-gradient(180deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.7) 100%)', pointerEvents: 'none' }} />
+      {/* Animated Background - CSS Based for reliability */}
+      <div className="fixed inset-0" style={{ zIndex: 1 }}>
+        {/* Animated gradient background */}
+        <div className="animated-bg" style={{
+          position: 'absolute',
+          width: '100%',
+          height: '100%',
+          background: 'linear-gradient(45deg, #0a0a1a, #1a0a2e, #0a0a1a)',
+          backgroundSize: '400% 400%',
+          animation: 'gradientShift 15s ease infinite'
+        }} />
+        
+        {/* Floating orbs */}
+        <div className="orb orb-1" />
+        <div className="orb orb-2" />
+        <div className="orb orb-3" />
+        
+        {/* Particle grid */}
+        <div className="particle-grid">
+          {[...Array(20)].map((_, i) => (
+            <div 
+              key={i} 
+              className="grid-particle"
+              style={{
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`,
+                animationDelay: `${Math.random() * 5}s`,
+                animationDuration: `${3 + Math.random() * 4}s`
+              }}
+            />
+          ))}
+        </div>
+        
+        {/* Overlay gradient for contrast */}
+        <div style={{ 
+          position: 'absolute', 
+          top: 0, 
+          left: 0, 
+          width: '100%', 
+          height: '100%', 
+          background: 'linear-gradient(180deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.6) 100%)', 
+          pointerEvents: 'none' 
+        }} />
       </div>
           
       {/* Floating Particles - Minimal */}
-      <div className="fixed inset-0 z-0 pointer-events-none">
+      <div className="fixed inset-0 pointer-events-none" style={{ zIndex: 2 }}>
         {[...Array(5)].map((_, i) => (
           <div
             key={i}
@@ -339,7 +373,7 @@ const Index = () => {
       </div>
 
       {/* Main Content */}
-      <div className="relative z-10">
+      <div className="relative" style={{ zIndex: 10 }}>
         
         {/* HERO SECTION - Epic Entrance */}
         <section className="min-h-0 md:min-h-screen flex flex-col items-center justify-center px-8 md:px-16 lg:px-24 py-16 md:py-0 relative">
@@ -791,6 +825,109 @@ const Index = () => {
         * {
           -webkit-font-smoothing: antialiased;
           -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Animated Background Styles */
+        @keyframes gradientShift {
+          0% { background-position: 0% 50%; }
+          50% { background-position: 100% 50%; }
+          100% { background-position: 0% 50%; }
+        }
+
+        @keyframes floatOrb {
+          0%, 100% { 
+            transform: translate(0, 0) scale(1);
+          }
+          33% { 
+            transform: translate(30px, -30px) scale(1.1);
+          }
+          66% { 
+            transform: translate(-20px, 20px) scale(0.9);
+          }
+        }
+
+        @keyframes particlePulse {
+          0%, 100% { 
+            opacity: 0;
+            transform: scale(0);
+          }
+          50% { 
+            opacity: 1;
+            transform: scale(1);
+          }
+        }
+
+        .orb {
+          position: absolute;
+          border-radius: 50%;
+          filter: blur(60px);
+          opacity: 0.4;
+          animation: floatOrb 20s ease-in-out infinite;
+        }
+
+        .orb-1 {
+          width: 400px;
+          height: 400px;
+          background: radial-gradient(circle, #3b82f6, transparent);
+          top: 20%;
+          left: 10%;
+          animation-duration: 25s;
+        }
+
+        .orb-2 {
+          width: 350px;
+          height: 350px;
+          background: radial-gradient(circle, #8b5cf6, transparent);
+          top: 60%;
+          right: 15%;
+          animation-duration: 30s;
+          animation-delay: -5s;
+        }
+
+        .orb-3 {
+          width: 300px;
+          height: 300px;
+          background: radial-gradient(circle, #ec4899, transparent);
+          bottom: 20%;
+          left: 50%;
+          animation-duration: 35s;
+          animation-delay: -10s;
+        }
+
+        .particle-grid {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          overflow: hidden;
+        }
+
+        .grid-particle {
+          position: absolute;
+          width: 3px;
+          height: 3px;
+          background: #fff;
+          border-radius: 50%;
+          animation: particlePulse 4s ease-in-out infinite;
+          box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        }
+
+        /* Mobile optimizations */
+        @media (max-width: 768px) {
+          .orb {
+            filter: blur(40px);
+          }
+          .orb-1 {
+            width: 250px;
+            height: 250px;
+          }
+          .orb-2 {
+            width: 220px;
+            height: 220px;
+          }
+          .orb-3 {
+            width: 200px;
+            height: 200px;
+          }
         }
 
         /* GPU-accelerated animations */
